@@ -1,0 +1,2 @@
+class StproductsController < ApplicationController
+end

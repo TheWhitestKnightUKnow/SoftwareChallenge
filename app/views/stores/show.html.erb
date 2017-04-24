@@ -1,0 +1,38 @@
+<h1>LCBO Store Details</h1>
+
+<% @stores['result'].each do |s| %>
+  <p>
+  <% if s['id'].to_s == params[:id] %>
+
+  	<p> Store Number :<%= s['id'] %>
+    <p>Name :<%= s['name'] %> </p>
+    <p>Address1: <%= s['address_line_1'] %></p>
+	<p>Address2: <%= s['address_line_2'] %></p>
+	<p>City: <%= s['city'] %></p>
+	<p>Postal Code: <%= s['postal_code'] %></p>
+	<p>Telephone: <%= s['telephone'] %></p>
+  	
+  	<h2> Store Hours </h2>
+
+	<p><strong>Sunday</strong> => Open at <%= convert_time(s['sunday_open']) %>  Close at <%= convert_time(s['sunday_close']) %></p>
+
+	<p><strong>Monday</strong> => Open at <%= convert_time(s['monday_open']) %>  Close at <%= convert_time(s['monday_close']) %></p>
+
+
+	<p><strong>Tuesday</strong> => Open at <%= convert_time(s['tuesday_open']) %>  Close at <%= convert_time(s['tuesday_close']) %></p>
+
+	<p><strong>Wednesday</strong> => Open at <%= convert_time(s['wednesday_open']) %> Close at <%= convert_time(s['wednesday_close']) %></p>
+
+
+    <p><strong>Thursday</strong> => Open at <%= convert_time(s['thursday_open']) %>  Close at <%= convert_time(s['thursday_close']) %></p>
+
+    <p><strong>Friday</strong> => Open at <%= convert_time(s['friday_open']) %>  Close at <%= convert_time(s['friday_close']) %></p>
+
+    <p><strong>Saturday</strong> => Open at <%= convert_time(s['saturday_open']) %>  Close at <%= convert_time(s['saturday_close']) %></p>
+
+  <%  end %>
+
+  	</p>
+<% end %>
+<%= link_to "See Stores", "/stores" %>
+<%= link_to "See Products", "/products" %>
