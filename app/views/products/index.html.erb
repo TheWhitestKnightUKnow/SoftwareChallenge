@@ -1,4 +1,4 @@
-<%= link_to "See Stores", "/stores" %>
+<%= link_to "User Profile", user_path(current_user) %>
 
 <h1>LCBO Products</h1>
 
@@ -14,7 +14,7 @@
 <% end %>
 
 </ol>
-<%= link_to "See Stores", stores_path %>
 <%= link_to "See Products", products_path %>
 <%= link_to "Previous Page", products_path(page: @products['pager']['previous_page']) %>
 <%= link_to "Next Page", products_path(page: @products['pager']['next_page']) %>
+<%= link_to "Log Out", logout_path %>

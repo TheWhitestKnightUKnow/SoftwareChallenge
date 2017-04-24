@@ -1,9 +1,4 @@
-
-
 <h2> Product Detail </h2>
-
-
-<p> <%= params %> </p>
 
 <p> <strong>Product Id: </strong><%= @products['result']['id'] %> </p>
 <p> <strong> Product Name: </strong> <%= @products['result']['name'] %> </p>
@@ -15,6 +10,5 @@
 
 </p>
 
-
-<%= link_to "See Stores", "/stores" %>
 <%= link_to "See Products", "/products" %>
+<%= link_to "Log Out", logout_path %>
